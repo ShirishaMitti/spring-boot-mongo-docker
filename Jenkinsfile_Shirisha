@@ -20,7 +20,7 @@ stage('Build')
 {
 sh "${MAVEN_HOME}/bin/mvn clean package"
 }
-/*
+
 stage('Deploying war to Tomcat server')
 {
 sshagent(['b345b2cc-bb85-4430-b564-02c7ba5b9b4a']) {
@@ -39,5 +39,5 @@ $BUILD_URL
 Thanks,
 Jenkins''', subject: '$PROJECT_NAME ---> Build $BUILD_NUMBER is $BUILD_STATUS', to: 'shirisha.mitti32@gmail.com,raghamitti2@gmail.com'
 }
-*/
+
 }
