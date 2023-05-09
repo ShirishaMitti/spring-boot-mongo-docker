@@ -19,7 +19,9 @@ stage('get code from github')
 agent {
 label 'Node1'
 }
+steps{
 git branch: 'dev', credentialsId: '47285e52-f8e7-47a4-9570-d36eef4acbee', url: 'https://github.com/ShirishaMitti/maven-web-application.git'
+}
 }
 
 
@@ -28,14 +30,18 @@ stage('Build')
 agent {
 label 'nodes'
 }
+steps{
 sh "mvn clean package"
+}
 }
 
 stage('Deploying war to Tomcat server')
 {
+steps{
 sshagent(['b345b2cc-bb85-4430-b564-02c7ba5b9b4a']) {
     // some block
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@54.167.112.121:/opt/apache-tomcat-9.0.74/webapps"
+}
 }
 }
 
