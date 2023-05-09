@@ -17,7 +17,7 @@ stages{
 stage('get code from github')
 {
 agent {
-label 'Node1'
+label 'nodes'
 }
 steps{
 git branch: 'dev', credentialsId: '47285e52-f8e7-47a4-9570-d36eef4acbee', url: 'https://github.com/ShirishaMitti/maven-web-application.git'
