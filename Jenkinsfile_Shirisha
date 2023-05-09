@@ -28,9 +28,7 @@ git branch: 'dev', credentialsId: '47285e52-f8e7-47a4-9570-d36eef4acbee', url: '
 stage('Build')
 {
 agent {
-node{
 label 'Node2'
-} 
 }
 steps{
 sh "mvn clean package"
