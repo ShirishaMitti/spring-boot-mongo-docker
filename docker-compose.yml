@@ -4,10 +4,10 @@ services:
   springboot:
     image: shirishamitti/spring-mongo-docker-compose:latest
     restart: always # This will be ignored if we deploy in docker swarm
-    environment:
-    - MONGO_DB_HOSTNAME=mymongo
-    - MONGO_DB_USERNAME=devdb
-    - MONGO_DB_PASSWORD=devdb123
+    #environment:
+    #- MONGO_DB_HOSTNAME=mymongo
+    #- MONGO_DB_USERNAME=devdb
+   # - MONGO_DB_PASSWORD=devdb123
     ports:
       - 8080:1332
     working_dir: /opt/app
