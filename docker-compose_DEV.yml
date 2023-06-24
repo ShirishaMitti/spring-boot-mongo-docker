@@ -11,7 +11,7 @@ services:
      # - 8080:1332
     #working_dir: /opt/app
     depends_on:
-      - mongo
+      - mymongo
     networks:
     - springappnetwork  
 
